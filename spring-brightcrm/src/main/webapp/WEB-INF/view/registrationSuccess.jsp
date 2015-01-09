@@ -11,8 +11,6 @@
 		<title>Registration success</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		
-		
-		
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <style type="text/css">
@@ -128,7 +126,7 @@ body {
     </style>
 		 </head>
        
-    <body>
+<body>
 <div class="login-body">
     <div class="container-login center-block">
 		<section>

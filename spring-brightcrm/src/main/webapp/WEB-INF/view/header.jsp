@@ -220,7 +220,7 @@ font-family:'Monotype Corsiva', 'Apple Chancery',
       </div>
       <div class="col col-sm-6">
         
-         <img src="/spring-brightcrm/resources/img/BrightCRM.png"       
+         <img src="/spring-brightcrm/resources/img/BrightCRM.png" />      
         
       </div>
     </div>

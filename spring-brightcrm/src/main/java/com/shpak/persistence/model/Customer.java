@@ -154,27 +154,6 @@ public class Customer {
 		this.street = street;
 	}
 	
-	public Customer (){}
-	
-	public Customer(Long id, String shortname, String fullname, String email,
-			String phonenumber, String contactperson, String info,
-			String country, String zip, String city, String street,
-			Collection<Deal> deals) {
-		super();
-		this.id = id;
-		this.shortname = shortname;
-		this.fullname = fullname;
-		this.email = email;
-		this.phonenumber = phonenumber;
-		this.contactperson = contactperson;
-		this.info = info;
-		this.country = country;
-		this.zip = zip;
-		this.city = city;
-		this.street = street;
-		this.deals = deals;
-	}
-	
 	@Override
 	public String toString() {
 		return "Customer [id=" + id + ", shortname=" + shortname
