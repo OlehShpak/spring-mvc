@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,6 +29,11 @@ public class CustomerController {
 
 	@Autowired
 	private InputDBValidator inputDBValidator;
+	
+	@InitBinder
+	public void setAllowedFields(WebDataBinder dataBinder) {
+	    dataBinder.setDisallowedFields("id");
+	}
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(CustomerController.class);
 
@@ -61,7 +68,7 @@ public class CustomerController {
 				LOGGER.info("This customer is new, hence he will be saved");
 				
 				customerService.addCustomer(addCustomer); 							
-				return "crm/customer/add";
+				return "redirect:/crm/customer/searchByShortname";
 			}
 		}
 	}

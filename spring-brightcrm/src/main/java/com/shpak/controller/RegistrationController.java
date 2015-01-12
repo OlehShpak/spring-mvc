@@ -9,6 +9,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,6 +30,11 @@ public class RegistrationController {
 	
 	@Autowired
 	private InputDBValidator inputDBValidator;
+	
+	@InitBinder
+	public void setAllowedFields(WebDataBinder dataBinder) {
+	    dataBinder.setDisallowedFields("id");
+	}
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(RegistrationController.class);
 	

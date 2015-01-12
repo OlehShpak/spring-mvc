@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
 
 import com.shpak.persistence.model.EmployeeTask;
 import com.shpak.persistence.repository.EmployeeTaskRepository;
 
 @Service
+@Scope(value="session", proxyMode=ScopedProxyMode.INTERFACES )
 public class EmployeeTaskServiceImpl implements EmployeeTaskService {
 
 	@Autowired

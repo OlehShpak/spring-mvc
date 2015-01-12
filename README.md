@@ -2,7 +2,8 @@
 This is not big, but pretty CRM system. It helps to practice some features in endless spring framework
 
 Entry point http://localhost:8080/spring-brightcrm
-Don't forget change your db properties (under src/main/resources) and add your JDBC Driver to POM
+
+Don't forget change your db properties (under src/main/resources) and add your JDBC Driver to POM  
 
 Done:
 - Authorization and authentication are provided by Spring Security
@@ -18,6 +19,7 @@ Done:
 - For validation model constraints is used Hibernate Validator
 - Frontend provided by JSP, JSTL, HTML5, CSS3, Bootstrap 
 - Controllers are tested by Mockito
+- Added controller and service performance measuring with Spring AOP
 - For logging is used SLF4J (console, file output path: ${catalina.home}/logs/shpak.log )
 - Project is built by Maven, required web server for Servlet 3.0.1 (e.g. Tomcat 7 and higher)
 
@@ -39,7 +41,9 @@ TODO:
 * Maven 
 * Tomcat 7
 * Servlet Api 3.0.1
-
+* AspectJ 1.8.4
+* Slf4j 1.7.9
+* Bootstrap 3.3.1
 
 
 

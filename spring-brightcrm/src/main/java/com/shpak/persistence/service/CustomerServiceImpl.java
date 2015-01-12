@@ -4,6 +4,9 @@ import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
 
 import com.shpak.persistence.model.Customer;
@@ -12,6 +15,7 @@ import com.shpak.persistence.repository.DealRepository;
 
 
 @Service
+@Scope(value="session", proxyMode=ScopedProxyMode.INTERFACES )
 public class CustomerServiceImpl implements CustomerService {
 
 	@Autowired
@@ -52,9 +56,9 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
+	@Cacheable
 	public List<String> getAllCustomersShortname() {
 		List<String> stringList = customerRepository.getAllCustomersShortname();
-		Collections.sort(stringList);
 		return stringList;
 	}
 

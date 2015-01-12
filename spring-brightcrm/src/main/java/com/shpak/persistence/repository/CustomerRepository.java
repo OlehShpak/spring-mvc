@@ -21,7 +21,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
 	
 	@Modifying
     @Transactional
-	@Query(value = "SELECT CUSTOMER_SHORTNAME FROM CUSTOMERS", nativeQuery = true)
+	@Query(value = "SELECT CUSTOMER_SHORTNAME FROM CUSTOMERS ORDER BY CUSTOMER_SHORTNAME", nativeQuery = true)
 	List<String> getAllCustomersShortname();
 	
 }

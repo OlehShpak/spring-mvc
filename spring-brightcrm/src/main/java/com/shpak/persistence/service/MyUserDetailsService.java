@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -35,7 +37,7 @@ public class MyUserDetailsService implements UserDetailsService {
 		
 	}
 
-	// Converts com.mkyong.users.model.User user to
+	// Converts com.shpak.persistence.model.User  user to
 	// org.springframework.security.core.userdetails.User
 	private User buildUserForAuthentication(com.shpak.persistence.model.User user, List<GrantedAuthority> authorities) {
 		return new User(user.getUsername(), user.getPassword(), user.isEnabled(), true, true, true, authorities);
