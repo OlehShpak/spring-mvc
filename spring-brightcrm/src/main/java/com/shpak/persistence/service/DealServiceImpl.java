@@ -1,5 +1,6 @@
 package com.shpak.persistence.service;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.List;
 
@@ -40,6 +41,18 @@ public class DealServiceImpl implements DealService {
 	public List<Deal> findByDeadlineBetween(Date from, Date to) {
 		
 		return dealRepository.findByDeadlineBetween(from, to);
+	}
+
+	@Override
+	public List<Deal> findBigDeals(BigDecimal minprice) {
+		List<Deal> bigDeals = dealRepository.findBigDeals(minprice);
+		return bigDeals;
+	}
+
+	@Override
+	public List<Deal> employeeEfficiency(String fullname) {
+		List<Deal> empDealsList = dealRepository.employeeEfficiency(fullname);
+		return empDealsList;
 	}
 
 }

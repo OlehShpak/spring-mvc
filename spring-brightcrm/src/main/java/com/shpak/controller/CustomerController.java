@@ -39,6 +39,7 @@ public class CustomerController {
 
 	@RequestMapping(value = "/crm/customer/add", method = RequestMethod.GET)
 	public String addCustomer(Model model) {
+		
 		List<String> customerList = customerService.getAllCustomersShortname();
 		model.addAttribute("customerList", customerList);
 		

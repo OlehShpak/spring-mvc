@@ -1,9 +1,14 @@
 # Spring (MVC + Security + Data) project (full java configured, without xml) 
 This is not big, but pretty CRM system. It helps to practice some features in endless spring framework
 
+Don't forget change your db properties (under src/main/resources) and add your JDBC Driver to POM  
+
+Please, use script.sql under src/main/resources for populating some db data 
+
 Entry point http://localhost:8080/spring-brightcrm
 
-Don't forget change your db properties (under src/main/resources) and add your JDBC Driver to POM  
+login: admin
+password: 123456
 
 Done:
 - Authorization and authentication are provided by Spring Security
@@ -11,7 +16,7 @@ Done:
 - During registration user data is validating for uniqueness, password encoded by BCrypt
 - Registered users receive role "user", hence access to all sections except chief section (needed role "chief")
 - User(e.g. employee) can create,delete and search customers (new customers are validating for uniqueness)
-- User can create,delete and search deals (search in custom date range by created date or deadline)
+- User can create,delete and search deals (search in custom date range by created date or deadline, by employee full name)
 - Customer and deals are related One To Many, customer is deleted with deal collection (cascade)
 - User can receive and view tasks from another users and accomplish it
 - ORM framework is Hibernate, db properties are for Postgresql
@@ -24,9 +29,8 @@ Done:
 - Project is built by Maven, required web server for Servlet 3.0.1 (e.g. Tomcat 7 and higher)
 
 TODO:
-- Add more analytics reports (implement some OLAP queries)
+- Add more analytics reports 
 - Implement global news for all users
-- Add email sending service
 - Deal forecasting
 
 ##Technologies used

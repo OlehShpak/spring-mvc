@@ -13,7 +13,7 @@
                  <form:form modelAttribute="taskId" method="post" class="form-inline" role="form" >
 												
 					
-					<form:input path="parameter" class="form-control" placeholder="Deal id"/> 
+					<form:input path="parameter" class="form-control" placeholder="Task id"/> 
 					<form:errors path="parameter" cssClass="errorblock"/>
 					
 					<button type="submit" class="btn btn-info " >

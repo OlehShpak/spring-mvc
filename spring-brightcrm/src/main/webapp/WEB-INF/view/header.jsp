@@ -316,9 +316,9 @@ font-family:'Monotype Corsiva', 'Apple Chancery',
                             <div id="collapseFour" class="accordion-body collapse">
                                 <div class="accordion-inner">
                                 <br>
-                                <h4><a href="#">To do</a></h4>  
+                                <h4><a href="/spring-brightcrm/crm/analytic/findBigDeals">Find big deals </a></h4>  
                                  
-                                  <h4><a href="#">To do</a></h4>
+                                  <h4><a href="/spring-brightcrm/crm/analytic/employeeEfficiency">Employee efficiency</a></h4>
                                 </div>
                             </div>
                         </div>

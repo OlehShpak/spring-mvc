@@ -53,16 +53,6 @@ public class DealControllerTests {
 	                .build();
 	}
 	
-	@Test
-	public void dealAddGetTest()  throws Exception {
-		
-		this.mockMvc.perform(get("/crm/deal/add"))
-		.andExpect(status().isOk())
-		.andExpect(view().name("crm/deal/add"))
-		.andExpect(forwardedUrl("/WEB-INF/view/crm/deal/add.jsp"))
-		.andExpect(model().attribute("dealForm" , notNullValue()));
-			
-	}
 	
 	@Test
 	public void dealAddEmptyPostTest() throws Exception {

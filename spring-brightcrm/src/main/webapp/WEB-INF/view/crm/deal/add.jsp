@@ -35,20 +35,20 @@
 					<br>
 					
 		</form:form>
-		</div> 
+	</div> 
 		
-        		<div class="col col-sm-5">
-				<h3>All customers :</h3>
-				<br>
-			<ul>
-       			 <li>Customer 1</li>
-      		 	 <li>Customer 2</li>
-        		 <li>Customer 3</li>
-      		     <li>Customer 4</li>
-    		</ul>
-                
-       
-             	</div>
+        	<div class="col col-sm-5">
+        	<c:if test="${not empty customerList}">
+        	<h3>All customers :</h3>
+        	<br>
+        		<ul>
+        			<c:forEach var="cust" items="${customerList}">
+        			<h4><li>${cust}</li></h4>
+        			</c:forEach>
+				</ul>
+			</c:if>
+			<br>	
+        </div>
       	</div> 
   	</div>
 </div>

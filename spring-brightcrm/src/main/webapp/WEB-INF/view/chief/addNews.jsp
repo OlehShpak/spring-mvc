@@ -6,9 +6,9 @@
               
               <div class="row">
               	<div class="col col-sm-6">
-              	<h3>Delete deal by id</h3>
+              	<h3>Add news</h3>
               	<br>
-              	<c:if test="${not empty deleteMessage}"><div class="errorblock">${deleteMessage}</div><br></c:if>
+              	
               	
                 <!-- TODO -->
                  

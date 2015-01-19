@@ -1,5 +1,6 @@
 package com.shpak.controller;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -41,6 +42,9 @@ public class DealController {
 	
 	@RequestMapping(value="crm/deal/add", method=RequestMethod.GET)
 	public String addDeal(Model model){
+		
+		List<String> customerList = customerService.getAllCustomersShortname();
+		model.addAttribute("customerList", customerList);
 		
 		Deal dealForm = new Deal();
 		model.addAttribute("dealForm", dealForm);
@@ -123,6 +127,7 @@ public class DealController {
 	
 	@RequestMapping(value="crm/deal/searchByDeadline", method=RequestMethod.GET)
 	public String searchDealByDeadline(Model model){
+		
 		DateParamHolder deadline = new DateParamHolder();
 		model.addAttribute("deadline", deadline);
 		LOGGER.info("Attribute deadline added to model");

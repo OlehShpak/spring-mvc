@@ -1,5 +1,6 @@
 package com.shpak.persistence.repository;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.List;
 
@@ -34,6 +35,14 @@ public interface DealRepository extends JpaRepository<Deal, Long> {
     @Query("select d from Deal d where d.deadline >= :from and d.deadline <= :to ")
 	List<Deal> findByDeadlineBetween(@Param("from") Date from, @Param("to") Date to);
 	
+	@Modifying
+    @Transactional
+    @Query("select d from Deal d where d.totalprice >= :minprice ")
+	List<Deal> findBigDeals(@Param("minprice") BigDecimal minprice);
 	
+	@Modifying
+    @Transactional
+    @Query("select d from Deal d where d.employeeName = :userFullname ")
+	List<Deal> employeeEfficiency(@Param("userFullname") String fullname);
 	
 }
