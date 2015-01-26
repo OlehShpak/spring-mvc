@@ -19,7 +19,7 @@ Done:
 - User can create,delete and search deals (search in custom date range by created date or deadline, by employee full name)
 - Customer and deals are related One To Many, customer is deleted with deal collection (cascade)
 - User can receive and view tasks from another users and accomplish it
-- ORM framework is Hibernate, db properties are for Postgresql
+- ORM framework is Hibernate, db properties are for PostgreSQL
 - Repositories are created by Spring Data
 - For validation model constraints is used Hibernate Validator
 - Frontend provided by JSP, JSTL, HTML5, CSS3, Bootstrap 
@@ -27,6 +27,13 @@ Done:
 - Added controller and service performance measuring with Spring AOP
 - For logging is used SLF4J (console, file output path: ${catalina.home}/logs/shpak.log )
 - Project is built by Maven, required web server for Servlet 3.0.1 (e.g. Tomcat 7 and higher)
+- JSP, JSON, XML views are provided by ContentNegotiatingViewResolver. Example:
+ 
+```
+   http://localhost:8080/spring-brightcrm/crm/customer/searchByShortnamePV/BP
+   http://localhost:8080/spring-brightcrm/crm/customer/searchByShortnamePV/BP.json
+   http://localhost:8080/spring-brightcrm/crm/customer/searchByShortnamePV/BP.xml
+```     
 
 TODO:
 - Add more analytics reports 
@@ -47,6 +54,7 @@ TODO:
 * Servlet Api 3.0.1
 * AspectJ 1.8.4
 * Slf4j 1.7.9
+* Jackson 2.5.0
 * Bootstrap 3.3.1
 
 

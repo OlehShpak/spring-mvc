@@ -26,22 +26,18 @@ public interface DealRepository extends JpaRepository<Deal, Long> {
     void deleteByCustomerShortname(@Param("customerShortname") String customerShortname);
 	
 	@Modifying
-    @Transactional
     @Query("select d from Deal d where d.createdDate >= :from and d.createdDate <= :to ")
 	List<Deal> findByCreatedDateBetween(@Param("from") Date from, @Param("to") Date to);
 	
 	@Modifying
-    @Transactional
     @Query("select d from Deal d where d.deadline >= :from and d.deadline <= :to ")
 	List<Deal> findByDeadlineBetween(@Param("from") Date from, @Param("to") Date to);
 	
 	@Modifying
-    @Transactional
     @Query("select d from Deal d where d.totalprice >= :minprice ")
 	List<Deal> findBigDeals(@Param("minprice") BigDecimal minprice);
 	
 	@Modifying
-    @Transactional
     @Query("select d from Deal d where d.employeeName = :userFullname ")
 	List<Deal> employeeEfficiency(@Param("userFullname") String fullname);
 	

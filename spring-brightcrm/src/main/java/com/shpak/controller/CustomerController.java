@@ -13,6 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -102,7 +103,23 @@ public class CustomerController {
 	}
 
 	// Search customer by shortname
-
+	
+	@RequestMapping(value="/crm/customer/searchByShortnamePV/{customerShortname}")
+	public String searchCustomerPV(@PathVariable String customerShortname, Model model){
+		
+		Customer customer = customerService.findByShortname(customerShortname);
+		if (customer != null) {
+			model.addAttribute("customer", customer);
+			LOGGER.info("This customer exists, hence he is added to model");
+			
+			return "crm/customer/searchByShortnamePV";
+		} else {
+			String inputMessage = "Customer doesn't exist";
+			model.addAttribute("inputMessage", inputMessage);
+			return "crm/customer/searchByShortnamePV";
+		}
+	}
+	
 	@RequestMapping(value = "/crm/customer/searchByShortname", method = RequestMethod.GET)
 	public String searchCustomer(Model model) {
 		
