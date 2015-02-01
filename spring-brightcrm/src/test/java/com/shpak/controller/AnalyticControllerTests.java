@@ -104,6 +104,7 @@ public class AnalyticControllerTests {
 	//Configuration
 	
 		private HandlerExceptionResolver exceptionResolver() {
+			
 	        SimpleMappingExceptionResolver exceptionResolver = new SimpleMappingExceptionResolver();
 	 
 	        Properties exceptionMappings = new Properties();
@@ -124,17 +125,18 @@ public class AnalyticControllerTests {
 	    }
 	 
 		 
-		    private LocalValidatorFactoryBean validator() {
-		        return new LocalValidatorFactoryBean();
+		 private LocalValidatorFactoryBean validator() {
+		    return new LocalValidatorFactoryBean();
 		    }
 		 
-		    private ViewResolver viewResolver() {
-		        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+		 private ViewResolver viewResolver() {
+			 
+		    InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
 		 
-		        viewResolver.setViewClass(JstlView.class);
-		        viewResolver.setPrefix("/WEB-INF/view/");
-		        viewResolver.setSuffix(".jsp");
+		    viewResolver.setViewClass(JstlView.class);
+		    viewResolver.setPrefix("/WEB-INF/view/");
+		    viewResolver.setSuffix(".jsp");
 		 
-		        return viewResolver;
+		    return viewResolver;
 		    }
 	}

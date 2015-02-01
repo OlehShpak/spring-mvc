@@ -62,7 +62,7 @@ public class CustomerController {
 			String validation = inputDBValidator.validateCustomer(addCustomer); 	// make sure that shortname, email or																	
 																					// phonenumber doesn't exist
 			if (!validation.equals("ok")) { 	
-				LOGGER.info("This customer already exists, user have to input new customer");
+				LOGGER.info("This customer already exists, user has to input new customer");
 				
 				model.addAttribute("inputError", validation);
 				return "crm/customer/add";
