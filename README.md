@@ -23,7 +23,7 @@ Done:
 - Repositories are created by Spring Data
 - For validation model constraints is used Hibernate Validator
 - Frontend provided by JSP, JSTL, HTML5, CSS3, Bootstrap 
-- Controllers are tested by Mockito
+- Controllers are tested by Mockito, Services are tested with JUnit
 - Added controller and service performance measuring with Spring AOP
 - For logging is used SLF4J (console, file output path: ${catalina.home}/logs/shpak.log )
 - Project is built by Maven, required web server for Servlet 3.0.1 (e.g. Tomcat 7 and higher)

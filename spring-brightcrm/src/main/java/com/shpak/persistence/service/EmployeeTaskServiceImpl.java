@@ -12,7 +12,6 @@ import com.shpak.persistence.model.EmployeeTask;
 import com.shpak.persistence.repository.EmployeeTaskRepository;
 
 @Service
-@Scope(value="session", proxyMode=ScopedProxyMode.INTERFACES )
 public class EmployeeTaskServiceImpl implements EmployeeTaskService {
 
 	@Autowired

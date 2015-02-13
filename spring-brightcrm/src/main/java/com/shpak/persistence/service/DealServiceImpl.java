@@ -13,7 +13,6 @@ import com.shpak.persistence.model.Deal;
 import com.shpak.persistence.repository.DealRepository;
 
 @Service
-@Scope(value="session", proxyMode=ScopedProxyMode.INTERFACES )
 public class DealServiceImpl implements DealService {
 
 	@Autowired

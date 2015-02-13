@@ -15,7 +15,6 @@ import com.shpak.persistence.repository.DealRepository;
 
 
 @Service
-@Scope(value="session", proxyMode=ScopedProxyMode.INTERFACES )
 public class CustomerServiceImpl implements CustomerService {
 
 	@Autowired
